@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 10.25" name="ManagementDormitoryContext">
+  <DataContextMoniker Name="/ManagementDormitoryContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f778ba0a-2fcd-4681-8d88-5dc0efeb6887" absoluteBounds="0.75, 1.375, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/ManagementDormitoryContextDataContext/Class" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05ab34b7-5f66-4772-a137-c8e6144392f6" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="807e00c7-ba24-44f4-ba4b-29f8c83919f3" absoluteBounds="3.5, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ManagementDormitoryContextDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="978c8020-dd4c-4353-8403-b536bf6f1d6d" absoluteBounds="3.515, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c7e045e-5843-4300-b4de-7da246ca604a" absoluteBounds="6.25, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ManagementDormitoryContextDataContext/Contract" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c82f10c9-f70e-4364-b6b7-c49bf4c58fa4" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="04b4aab2-315e-408f-b5e0-ef17048a894e" absoluteBounds="9, 1, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/ManagementDormitoryContextDataContext/Rent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b9e33bd-1bc9-42bb-b261-cf1b287a485b" absoluteBounds="9.015, 1.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a0f78734-f83e-4895-ab59-333e00c489d8" absoluteBounds="3.5, 8.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/ManagementDormitoryContextDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38dee6a5-7b7f-44cf-8589-17fa1325f9b7" absoluteBounds="3.515, 8.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4c07a901-c7b6-4c39-a32f-3757e8978441" absoluteBounds="3.5, 5.125, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/ManagementDormitoryContextDataContext/Room" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46fabc3c-f53a-4068-a17b-64c6b65c05a2" absoluteBounds="3.515, 5.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d28924f6-e7be-4dd2-bd71-0980908b07d7" absoluteBounds="6.25, 7.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ManagementDormitoryContextDataContext/Staff" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95efe290-130e-450c-91c4-1ccce65b32b7" absoluteBounds="6.265, 8.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.97199625651042); (3.5 : 1.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ManagementDormitoryContextDataContext/Class/Class_Student" />
+      <nodes>
+        <classShapeMoniker Id="f778ba0a-2fcd-4681-8d88-5dc0efeb6887" />
+        <classShapeMoniker Id="807e00c7-ba24-44f4-ba4b-29f8c83919f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.03929768880208); (6.25 : 2.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ManagementDormitoryContextDataContext/Student/Student_Contract" />
+      <nodes>
+        <classShapeMoniker Id="807e00c7-ba24-44f4-ba4b-29f8c83919f3" />
+        <classShapeMoniker Id="3c7e045e-5843-4300-b4de-7da246ca604a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 1.98159912109375); (9 : 1.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ManagementDormitoryContextDataContext/Contract/Contract_Rent" />
+      <nodes>
+        <classShapeMoniker Id="3c7e045e-5843-4300-b4de-7da246ca604a" />
+        <classShapeMoniker Id="04b4aab2-315e-408f-b5e0-ef17048a894e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.01044840494792); (7.25 : 6.01044840494792); (7.25 : 3.03049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ManagementDormitoryContextDataContext/Room/Room_Contract" />
+      <nodes>
+        <classShapeMoniker Id="4c07a901-c7b6-4c39-a32f-3757e8978441" />
+        <classShapeMoniker Id="3c7e045e-5843-4300-b4de-7da246ca604a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 8.95274983723958); (10 : 8.95274983723958); (10 : 2.9631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ManagementDormitoryContextDataContext/Staff/Staff_Rent" />
+      <nodes>
+        <classShapeMoniker Id="d28924f6-e7be-4dd2-bd71-0980908b07d7" />
+        <classShapeMoniker Id="04b4aab2-315e-408f-b5e0-ef17048a894e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.97199625651042); (6.25 : 8.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ManagementDormitoryContextDataContext/Role/Role_Staff" />
+      <nodes>
+        <classShapeMoniker Id="a0f78734-f83e-4895-ab59-333e00c489d8" />
+        <classShapeMoniker Id="d28924f6-e7be-4dd2-bd71-0980908b07d7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

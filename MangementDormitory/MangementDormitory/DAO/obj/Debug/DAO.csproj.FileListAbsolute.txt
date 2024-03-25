@@ -1,0 +1,6 @@
+E:\MangementDormitory\DAO\bin\Debug\DAO.dll.config
+E:\MangementDormitory\DAO\bin\Debug\DAO.dll
+E:\MangementDormitory\DAO\bin\Debug\DAO.pdb
+E:\MangementDormitory\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\MangementDormitory\DAO\obj\Debug\DAO.dll
+E:\MangementDormitory\DAO\obj\Debug\DAO.pdb

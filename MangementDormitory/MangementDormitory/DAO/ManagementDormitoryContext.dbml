@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MangementDormitory" Class="ManagementDormitoryContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=MangementDormitory;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="MangementDormitoryConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Class" Member="Classes">
+    <Type Name="Class">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Class_Student" Member="Students" ThisKey="id" OtherKey="classId" Type="Student" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="studentCode" Type="System.String" DbType="VarChar(21) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="classId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Student_Contract" Member="Contracts" ThisKey="studentCode" OtherKey="studentCode" Type="Contract" />
+      <Association Name="Class_Student" Member="Class" ThisKey="classId" OtherKey="id" Type="Class" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contract" Member="Contracts">
+    <Type Name="Contract">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="studentCode" Type="System.String" DbType="VarChar(21)" CanBeNull="true" />
+      <Column Name="roomId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dateStart" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dateEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="deposit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="priceActual" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Contract_Rent" Member="Rents" ThisKey="id" OtherKey="contractId" Type="Rent" />
+      <Association Name="Student_Contract" Member="Student" ThisKey="studentCode" OtherKey="studentCode" Type="Student" IsForeignKey="true" />
+      <Association Name="Room_Contract" Member="Room" ThisKey="roomId" OtherKey="id" Type="Room" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rent" Member="Rents">
+    <Type Name="Rent">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="contractId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="monthYear" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dateOfPayment" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="staffId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Contract_Rent" Member="Contract" ThisKey="contractId" OtherKey="id" Type="Contract" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Staff_Rent" Member="Staff" ThisKey="staffId" OtherKey="id" Type="Staff" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Role_Staff" Member="Staffs" ThisKey="id" OtherKey="roleId" Type="Staff" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Room" Member="Rooms">
+    <Type Name="Room">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="area" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numberOfBeds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Room_Contract" Member="Contracts" ThisKey="id" OtherKey="roomId" Type="Contract" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Staff" Member="Staffs">
+    <Type Name="Staff">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="roleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Staff_Rent" Member="Rents" ThisKey="id" OtherKey="staffId" Type="Rent" />
+      <Association Name="Role_Staff" Member="Role" ThisKey="roleId" OtherKey="id" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

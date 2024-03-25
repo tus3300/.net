@@ -1,0 +1,7 @@
+E:\MangementDormitory\BUS\bin\Debug\BUS.dll
+E:\MangementDormitory\BUS\bin\Debug\BUS.pdb
+E:\MangementDormitory\BUS\bin\Debug\DAO.dll
+E:\MangementDormitory\BUS\bin\Debug\DAO.pdb
+E:\MangementDormitory\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\MangementDormitory\BUS\obj\Debug\BUS.dll
+E:\MangementDormitory\BUS\obj\Debug\BUS.pdb
